@@ -41,6 +41,7 @@ exports.loginUser = async (req, res, next) => {
       email: user.email,
       token: generateToken(user._id)
     });
+    console.log("JWT_SECRET:", process.env.JWT_SECRET);
   } catch (err) {
     next(err);
   }
